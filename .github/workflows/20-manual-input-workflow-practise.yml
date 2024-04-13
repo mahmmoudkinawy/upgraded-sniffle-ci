@@ -1,0 +1,23 @@
+name: 20-manual-input-workflow-training
+
+on:
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: 'First value?'
+        type: number
+        default: 0
+        required: true
+      number2:
+        description: 'Second value?'
+        type: number
+        default: 0
+        required: true
+
+jobs:
+  calculate-sum:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Calucalte some of them
+        run: 'echo Sum = ${{github.event.inputs.number1}} + ${{github.event.input.number2}}'
