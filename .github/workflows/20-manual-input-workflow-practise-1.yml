@@ -10,16 +10,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-    - name: Run list
-      run: echo ls
+      - name: Run list
+        run: echo ls
 
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
 
-    - name: Run dotnet
-      users: dotnet --list-sdks
+      - name: Run dotnet
+        uses: dotnet --list-sdks
