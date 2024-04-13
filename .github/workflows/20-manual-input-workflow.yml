@@ -8,6 +8,10 @@ on:
         description: 'Person to greet'
         default: 'World'
         required: true
+      age:
+        description: 'Person to greet age'
+        default: '0'
+        required: true
 
 jobs:
   greet:
@@ -15,4 +19,6 @@ jobs:
 
     steps:
       - name: Send greeting
-        run: echo "Hello ${{github.event.inputs.name}}"
+        run: |
+          echo "Hello ${{github.event.inputs.name}}, "
+          echo "Your age is ${{github.event.inputs.age}}"
