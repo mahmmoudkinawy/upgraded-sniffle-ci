@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run list
         run: echo ls
@@ -23,3 +23,11 @@ jobs:
 
       - name: Display dotnet version
         run: dotnet --version
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+
+      - name: Display Nodejs version
+        run: |
+          node --version
+          npm --version
